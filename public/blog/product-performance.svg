@@ -1,0 +1,17 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#0f766e" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="40" fill="url(#grad1)" />
+  <circle cx="280" cy="260" r="90" fill="#ffffff" fill-opacity="0.12" />
+  <circle cx="620" cy="200" r="140" fill="#ffffff" fill-opacity="0.08" />
+  <path d="M240 520H520C532.15 520 542 510.15 542 498V452C542 439.85 532.15 430 520 430H240C227.85 430 218 439.85 218 452V498C218 510.15 227.85 520 240 520Z" fill="#ffffff" fill-opacity="0.18" />
+  <path d="M608 564H880C892.15 564 902 554.15 902 542V470C902 457.85 892.15 448 880 448H608C595.85 448 586 457.85 586 470V542C586 554.15 595.85 564 608 564Z" fill="#ffffff" fill-opacity="0.18" />
+  <rect x="330" y="350" width="420" height="30" rx="15" fill="#ffffff" />
+  <rect x="330" y="410" width="320" height="22" rx="11" fill="#ffffff" opacity="0.8" />
+  <rect x="330" y="450" width="250" height="22" rx="11" fill="#ffffff" opacity="0.8" />
+  <text x="80" y="720" fill="#ffffff" font-family="Inter, sans-serif" font-size="70" font-weight="700">Performance</text>
+</svg>

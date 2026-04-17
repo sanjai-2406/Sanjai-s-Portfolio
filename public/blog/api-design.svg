@@ -1,0 +1,15 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#6d28d9" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="40" fill="url(#grad4)" />
+  <rect x="220" y="240" width="220" height="120" rx="20" fill="#ffffff" opacity="0.18" />
+  <rect x="520" y="200" width="320" height="160" rx="24" fill="#ffffff" opacity="0.16" />
+  <rect x="880" y="280" width="200" height="110" rx="22" fill="#ffffff" opacity="0.14" />
+  <path d="M310 520H870" stroke="#ffffff" stroke-width="24" stroke-linecap="round" opacity="0.24" />
+  <circle cx="430" cy="540" r="65" fill="#ffffff" opacity="0.14" />
+  <text x="80" y="720" fill="#ffffff" font-family="Inter, sans-serif" font-size="70" font-weight="700">API</text>
+</svg>
