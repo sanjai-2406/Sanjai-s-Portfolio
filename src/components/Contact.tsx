@@ -1,4 +1,18 @@
-import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  ArrowRight,
+  Clock,
+  MessageSquare,
+  Send,
+  CheckCircle2,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Reveal from "@/components/Reveal";
+import SectionHeader from "@/components/SectionHeader";
+import { cn } from "@/lib/utils";
 
 const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -22,148 +36,275 @@ const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <path d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.76-1.605-2.665-.305-5.466-1.335-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.435.375.81 1.11.81 2.235 0 1.615-.015 2.915-.015 3.315 0 .315.21.69.825.57 4.765-1.59 8.205-6.087 8.205-11.387 0-6.627-5.373-12-12-12z"/>
   </svg>
 );
-import { Button } from "@/components/ui/button";
+
+const contactMethods = [
+  {
+    icon: Mail,
+    label: "Email",
+    value: "sanjaivsbec@gmail.com",
+    href: "mailto:sanjaivsbec@gmail.com",
+    description: "Best for detailed project briefs",
+  },
+  {
+    icon: WhatsappIcon,
+    label: "WhatsApp",
+    value: "+91 9345457374",
+    href: "https://wa.me/919345457374",
+    description: "Quick questions & fast replies",
+    external: true,
+  },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "+91 9345457374",
+    href: "tel:+919345457374",
+    description: "Mon–Sat, 10 AM – 7 PM IST",
+  },
+];
+
+const socialLinks = [
+  { href: "https://github.com/sanjaivsbec", label: "GitHub", icon: GithubIcon },
+  { href: "https://www.linkedin.com/in/sanjai-saravanan-2559a323b/", label: "LinkedIn", icon: LinkedinIcon },
+  { href: "https://www.instagram.com/_sanjaiii.i/", label: "Instagram", icon: InstagramIcon },
+  { href: "https://wa.me/919345457374", label: "WhatsApp", icon: WhatsappIcon },
+];
+
+const projectTypes = [
+  "Web Application",
+  "E-Commerce",
+  "API / Backend",
+  "Website Redesign",
+  "Other",
+];
+
+const inputClass =
+  "w-full bg-background/80 border border-border rounded-xl px-4 py-3 text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-smooth";
 
 const Contact = () => {
-  return (
-    <section id="contact" className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-hero-gradient opacity-50 pointer-events-none" aria-hidden />
-      <div className="container relative">
-        <div className="max-w-4xl mx-auto bg-card-gradient border border-border rounded-3xl p-8 md:p-12 shadow-elegant">
-          <div className="grid md:grid-cols-2 gap-10">
-            <div>
-              <span className="text-primary font-mono text-sm"> let's connect</span>
-              <h2 className="text-3xl md:text-5xl font-bold mt-2 mb-4">
-                Have a project <span className="text-gradient">in mind?</span>
-              </h2>
-              <p className="text-muted-foreground mb-8">
-                I'm currently available for projects, contract work, and collaborations. Let's build something great together.
-              </p>
+  const [projectType, setProjectType] = useState("Web Application");
 
-              <div className="space-y-4">
-                <a
-                  href="mailto:sanjaivsbec@gmail.com"
-                  className="flex items-center gap-3 text-foreground hover:text-primary transition-smooth group"
-                >
-                  <span className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-smooth">
-                    <Mail className="w-4 h-4 text-primary" />
-                  </span>
-                  <span className="font-mono text-sm">sanjaivsbec@gmail.com</span>
-                </a>
-                <a
-                  href="https://wa.me/919345457374"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-3 text-foreground hover:text-primary transition-smooth group"
-                >
-                  <span className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-smooth">
-                    <WhatsappIcon className="w-4 h-4 text-primary" />
-                  </span>
-                  <span className="font-mono text-sm">WhatsApp: +91 9345457374</span>
-                </a>
-                <a
-                  href="tel:+919345457374"
-                  className="flex items-center gap-3 text-foreground hover:text-primary transition-smooth group"
-                >
-                  <span className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-smooth">
-                    <Phone className="w-4 h-4 text-primary" />
-                  </span>
-                  <span className="font-mono text-sm">+91 9345457374</span>
-                </a>
-                <div className="flex items-center gap-3 text-muted-foreground">
-                  <span className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <MapPin className="w-4 h-4 text-primary" />
-                  </span>
-                  <span className="font-mono text-sm">Bengaluru, Karnataka, India</span>
+  return (
+    <section id="contact" className="section-padding relative overflow-hidden section-divider">
+      <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" aria-hidden />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent/10 blur-3xl rounded-full pointer-events-none" aria-hidden />
+
+      <div className="container relative">
+        <Reveal>
+          <SectionHeader
+            label="Contact"
+            align="center"
+            title={
+              <>
+                Let's start a <span className="text-gradient">conversation</span>
+              </>
+            }
+            description="Tell me about your project — I'll get back to you within 24 hours with next steps."
+          />
+        </Reveal>
+
+        {/* Quick action cards — mobile first */}
+        <Reveal delay={80}>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6 md:mb-8 max-w-4xl mx-auto">
+            {contactMethods.map(({ icon: Icon, label, value, href, description, external }) => (
+              <a
+                key={label}
+                href={href}
+                target={external ? "_blank" : undefined}
+                rel={external ? "noreferrer" : undefined}
+                className="glass-card rounded-2xl p-4 sm:p-5 card-interactive group flex sm:flex-col items-center sm:items-start gap-3 sm:gap-0 text-center sm:text-left"
+              >
+                <div className="w-11 h-11 rounded-xl bg-accent-gradient flex items-center justify-center shrink-0 group-hover:scale-105 transition-smooth shadow-sm">
+                  <Icon className="w-5 h-5 text-primary-foreground" />
+                </div>
+                <div className="min-w-0 flex-1 sm:mt-3">
+                  <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground mb-0.5">{label}</p>
+                  <p className="font-semibold text-sm truncate">{value}</p>
+                  <p className="text-xs text-muted-foreground mt-1 hidden sm:block">{description}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </Reveal>
+
+        <Reveal delay={120}>
+          <div className="max-w-5xl mx-auto overflow-hidden rounded-2xl sm:rounded-3xl border border-border shadow-elegant">
+            <div className="grid lg:grid-cols-5">
+              {/* Info panel */}
+              <div className="lg:col-span-2 relative bg-accent-gradient p-6 sm:p-8 lg:p-10 text-primary-foreground overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(255,255,255,0.12),transparent_55%)] pointer-events-none" aria-hidden />
+                <div className="absolute -bottom-16 -right-16 w-48 h-48 rounded-full bg-white/10 blur-2xl pointer-events-none" aria-hidden />
+
+                <div className="relative">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/15 border border-white/20 text-xs font-medium mb-6">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
+                    </span>
+                    Available for new projects
+                  </div>
+
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2">Get in touch</h3>
+                  <p className="text-sm text-primary-foreground/80 leading-relaxed mb-8">
+                    Open to freelance projects, contract roles, and long-term collaborations. Based in Bengaluru, working with clients worldwide.
+                  </p>
+
+                  <div className="space-y-4 mb-8">
+                    <div className="flex items-start gap-3">
+                      <MapPin className="w-5 h-5 shrink-0 mt-0.5 opacity-80" />
+                      <div>
+                        <p className="text-xs uppercase tracking-wider opacity-70 mb-0.5">Location</p>
+                        <p className="text-sm font-medium">Bengaluru, Karnataka, India</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Clock className="w-5 h-5 shrink-0 mt-0.5 opacity-80" />
+                      <div>
+                        <p className="text-xs uppercase tracking-wider opacity-70 mb-0.5">Response time</p>
+                        <p className="text-sm font-medium">Within 24 hours</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <MessageSquare className="w-5 h-5 shrink-0 mt-0.5 opacity-80" />
+                      <div>
+                        <p className="text-xs uppercase tracking-wider opacity-70 mb-0.5">Preferred contact</p>
+                        <p className="text-sm font-medium">Email or WhatsApp</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {["React", "Spring Boot", "Docker", "Next.js"].map((tag) => (
+                      <span key={tag} className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-white/10 border border-white/15">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div>
+                    <p className="text-xs uppercase tracking-wider opacity-70 mb-3">Follow me</p>
+                    <div className="flex gap-2">
+                      {socialLinks.map(({ href, label, icon: Icon }) => (
+                        <a
+                          key={label}
+                          href={href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center hover:bg-white/20 transition-smooth"
+                          aria-label={label}
+                        >
+                          <Icon className="w-4 h-4" />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex gap-3 mt-8">
-                <a
-                  href="https://github.com/sanjaivsbec"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary/50 hover:text-primary transition-smooth"
-                  aria-label="GitHub"
+              {/* Form panel */}
+              <div className="lg:col-span-3 bg-card/95 backdrop-blur-sm p-6 sm:p-8 lg:p-10">
+                <div className="flex items-center gap-3 mb-6 pb-6 border-b border-border">
+                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+                    <Send className="w-5 h-5 text-accent" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Send a message</h3>
+                    <p className="text-xs text-muted-foreground">Fill out the form and I'll reply via email</p>
+                  </div>
+                </div>
+
+                <form
+                  className="space-y-5"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    const form = e.currentTarget as HTMLFormElement;
+                    const data = new FormData(form);
+                    const subject = encodeURIComponent(
+                      `[${data.get("projectType")}] Inquiry from ${data.get("name")}`,
+                    );
+                    const body = encodeURIComponent(
+                      `${data.get("message")}\n\n— ${data.get("name")} (${data.get("email")})\nProject type: ${data.get("projectType")}`,
+                    );
+                    window.location.href = `mailto:sanjaivsbec@gmail.com?subject=${subject}&body=${body}`;
+                  }}
                 >
-                  <GithubIcon className="w-4 h-4" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/sanjai-saravanan-2559a323b/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary/50 hover:text-primary transition-smooth"
-                  aria-label="LinkedIn"
-                >
-                  <LinkedinIcon className="w-4 h-4" />
-                </a>
-                <a
-                  href="https://www.instagram.com/_sanjaiii.i/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary/50 hover:text-primary transition-smooth"
-                  aria-label="Instagram"
-                >
-                  <InstagramIcon className="w-4 h-4" />
-                </a>
-                <a
-                  href="https://wa.me/919345457374"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary/50 hover:text-primary transition-smooth"
-                  aria-label="WhatsApp"
-                >
-                  <WhatsappIcon className="w-4 h-4" />
-                </a>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="contact-name" className="text-sm font-medium text-foreground mb-1.5 block">
+                        Your Name <span className="text-accent">*</span>
+                      </label>
+                      <input
+                        id="contact-name"
+                        required
+                        name="name"
+                        className={inputClass}
+                        placeholder="John Doe"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="contact-email" className="text-sm font-medium text-foreground mb-1.5 block">
+                        Email <span className="text-accent">*</span>
+                      </label>
+                      <input
+                        id="contact-email"
+                        required
+                        type="email"
+                        name="email"
+                        className={inputClass}
+                        placeholder="you@company.com"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-medium text-foreground mb-2 block">Project Type</label>
+                    <input type="hidden" name="projectType" value={projectType} />
+                    <div className="flex flex-wrap gap-2">
+                      {projectTypes.map((type) => (
+                        <button
+                          key={type}
+                          type="button"
+                          onClick={() => setProjectType(type)}
+                          className={cn(
+                            "px-3 py-1.5 rounded-full text-xs font-medium border transition-smooth",
+                            projectType === type
+                              ? "bg-accent text-accent-foreground border-accent"
+                              : "bg-secondary/50 text-muted-foreground border-border hover:border-accent/40",
+                          )}
+                        >
+                          {type}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="contact-message" className="text-sm font-medium text-foreground mb-1.5 block">
+                      Project Details <span className="text-accent">*</span>
+                    </label>
+                    <textarea
+                      id="contact-message"
+                      required
+                      name="message"
+                      rows={5}
+                      className={cn(inputClass, "resize-none")}
+                      placeholder="Describe your project, timeline, and goals..."
+                    />
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-2">
+                    <Button type="submit" variant="hero" size="lg" className="w-full sm:w-auto rounded-xl h-12 px-8">
+                      Send Message <ArrowRight className="ml-1 w-4 h-4" />
+                    </Button>
+                    <p className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-accent shrink-0" />
+                      No spam — your info stays private
+                    </p>
+                  </div>
+                </form>
               </div>
             </div>
-
-            <form
-              className="space-y-4"
-              onSubmit={(e) => {
-                e.preventDefault();
-                const form = e.currentTarget as HTMLFormElement;
-                const data = new FormData(form);
-                const subject = encodeURIComponent(`Project inquiry from ${data.get("name")}`);
-                const body = encodeURIComponent(`${data.get("message")}\n\n— ${data.get("name")} (${data.get("email")})`);
-                window.location.href = `mailto:sanjaivsbec@gmail.com?subject=${subject}&body=${body}`;
-              }}
-            >
-              <div>
-                <label className="text-sm text-muted-foreground mb-1.5 block">Your Name</label>
-                <input
-                  required
-                  name="name"
-                  className="w-full bg-secondary border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-smooth"
-                  placeholder="John Doe"
-                />
-              </div>
-              <div>
-                <label className="text-sm text-muted-foreground mb-1.5 block">Email</label>
-                <input
-                  required
-                  type="email"
-                  name="email"
-                  className="w-full bg-secondary border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-smooth"
-                  placeholder="you@company.com"
-                />
-              </div>
-              <div>
-                <label className="text-sm text-muted-foreground mb-1.5 block">Project Details</label>
-                <textarea
-                  required
-                  name="message"
-                  rows={5}
-                  className="w-full bg-secondary border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-smooth resize-none"
-                  placeholder="Tell me about your project..."
-                />
-              </div>
-              <Button type="submit" variant="hero" size="lg" className="w-full">
-                Send Message <ArrowRight className="ml-1 w-4 h-4" />
-              </Button>
-            </form>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

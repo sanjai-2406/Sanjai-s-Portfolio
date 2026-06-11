@@ -1,4 +1,6 @@
-import { Server, Layout, Database, TestTube2, Wrench } from "lucide-react";
+import { Server, Layout, Database, TestTube2, Wrench, Container } from "lucide-react";
+import Reveal from "@/components/Reveal";
+import SectionHeader from "@/components/SectionHeader";
 
 const skillGroups = [
   {
@@ -26,44 +28,53 @@ const skillGroups = [
     title: "Tools & Platforms",
     skills: ["Pega CSA/SSA v8.8", "Git & GitHub", "VS Code", "IntelliJ IDEA", "Medusa.js"],
   },
+  {
+    icon: Container,
+    title: "DevOps",
+    skills: ["Docker", "Docker Compose", "CI/CD", "GitHub Actions", "Linux", "Containerization"],
+  },
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 bg-secondary/20 relative">
-      <div className="container">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-4">
-            Tech <span className="text-gradient">Stack</span>
-          </h2>
-          <p className="text-muted-foreground">
-            A versatile toolkit honed across full-stack development, enterprise platforms, and quality assurance.
-          </p>
-        </div>
+    <section id="skills" className="section-padding bg-section-alt relative section-divider">
+      <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" aria-hidden />
+      <div className="container relative">
+        <Reveal>
+          <SectionHeader
+            label="Expertise"
+            align="center"
+            title={
+              <>
+                Tech <span className="text-gradient">Stack</span>
+              </>
+            }
+            description="A versatile toolkit honed across full-stack development, DevOps, enterprise platforms, and quality assurance."
+          />
+        </Reveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillGroups.map(({ icon: Icon, title, skills }) => (
-            <div
-              key={title}
-              className="bg-card-gradient border border-border rounded-2xl p-6 hover:border-primary/40 hover:shadow-elegant transition-smooth group"
-            >
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-smooth">
-                  <Icon className="w-5 h-5 text-primary" />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+          {skillGroups.map(({ icon: Icon, title, skills }, i) => (
+            <Reveal key={title} delay={i * 80}>
+              <div className="h-full glass-card rounded-2xl p-5 sm:p-6 card-interactive group">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-smooth">
+                    <Icon className="w-5 h-5 text-accent" />
+                  </div>
+                  <h3 className="text-lg font-semibold">{title}</h3>
                 </div>
-                <h3 className="text-xl font-semibold">{title}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="text-xs font-mono px-3 py-1.5 rounded-md bg-background text-secondary-foreground border border-border hover:border-accent/30 hover:text-accent transition-smooth"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="text-xs font-mono px-3 py-1.5 rounded-md bg-secondary text-secondary-foreground border border-border"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

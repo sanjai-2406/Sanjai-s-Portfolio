@@ -1,101 +1,119 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Sanjai's Freelance Portfolio Design System */
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 8%;
+    --background: 222 38% 96%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 8%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 8%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 0 0% 8%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 0 0% 25%;
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 222 30% 25%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 8%;
+    --secondary: 222 32% 91%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 222 28% 88%;
+    --muted-foreground: 215 20% 42%;
 
-    --accent: 174 68% 42%;
+    --accent: 172 66% 38%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 75% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 8%;
+    --border: 222 24% 86%;
+    --input: 222 24% 86%;
+    --ring: 172 66% 38%;
+
+    --section-alt: 224 40% 92%;
+    --section-deep: 226 45% 88%;
+    --section-footer: 222 42% 94%;
 
     --radius: 0.75rem;
 
-    --gradient-primary: linear-gradient(135deg, hsl(0 0% 8%), hsl(0 0% 30%));
-    --gradient-hero: radial-gradient(ellipse at top, hsl(0 0% 0% / 0.06), transparent 60%), radial-gradient(ellipse at bottom right, hsl(0 0% 0% / 0.04), transparent 50%);
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(0 0% 97%));
-    --gradient-text: linear-gradient(135deg, hsl(0 0% 8%), hsl(0 0% 35%));
+    --gradient-primary: linear-gradient(135deg, hsl(222 47% 11%), hsl(224 35% 28%));
+    --gradient-hero: radial-gradient(ellipse 90% 60% at 50% -15%, hsl(172 66% 38% / 0.18), transparent 55%),
+      radial-gradient(ellipse 55% 45% at 100% 10%, hsl(224 60% 55% / 0.12), transparent 50%),
+      radial-gradient(ellipse 50% 40% at 0% 90%, hsl(172 66% 38% / 0.1), transparent 45%),
+      linear-gradient(180deg, hsl(222 38% 96%) 0%, hsl(224 40% 93%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(222 35% 97%));
+    --gradient-text: linear-gradient(135deg, hsl(222 47% 11%), hsl(172 66% 32%));
+    --gradient-accent: linear-gradient(135deg, hsl(172 66% 38%), hsl(192 70% 42%));
+    --gradient-section: linear-gradient(180deg, hsl(var(--section-alt)), hsl(var(--section-deep) / 0.6));
 
-    --shadow-glow: 0 0 60px hsl(0 0% 0% / 0.1);
-    --shadow-card: 0 10px 40px -10px hsl(0 0% 0% / 0.12);
-    --shadow-elegant: 0 20px 60px -20px hsl(0 0% 0% / 0.18);
+    --shadow-glow: 0 0 60px hsl(172 66% 38% / 0.18);
+    --shadow-card: 0 4px 24px -4px hsl(222 47% 11% / 0.1);
+    --shadow-elegant: 0 24px 64px -16px hsl(222 47% 11% / 0.16);
 
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 0 0% 8%;
-    --sidebar-primary: 0 0% 8%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 96%;
-    --sidebar-accent-foreground: 0 0% 8%;
-    --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 0 0% 8%;
+    --sidebar-background: 222 38% 96%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 222 47% 11%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 222 32% 91%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 222 24% 86%;
+    --sidebar-ring: 172 66% 38%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 222 47% 7%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 222 44% 10%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 222 44% 10%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary-foreground: 222 47% 11%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 217 28% 16%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 217 28% 16%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 174 68% 48%;
+    --accent: 172 66% 48%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 217 28% 20%;
+    --input: 217 28% 20%;
+    --ring: 172 66% 48%;
+
+    --section-alt: 222 44% 9%;
+    --section-deep: 224 40% 12%;
+    --section-footer: 222 47% 6%;
+
+    --gradient-hero: radial-gradient(ellipse 90% 60% at 50% -15%, hsl(172 66% 48% / 0.15), transparent 55%),
+      radial-gradient(ellipse 55% 45% at 100% 10%, hsl(224 60% 45% / 0.1), transparent 50%),
+      linear-gradient(180deg, hsl(222 47% 7%) 0%, hsl(222 44% 9%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(222 44% 11%), hsl(222 44% 9%));
+    --gradient-section: linear-gradient(180deg, hsl(var(--section-alt)), hsl(var(--section-deep)));
+
+    --sidebar-background: 222 47% 7%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 172 66% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 217 28% 16%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 28% 20%;
+    --sidebar-ring: 172 66% 48%;
   }
 }
 
@@ -105,12 +123,40 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    @apply text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    background-color: hsl(var(--background));
+    background-image:
+      radial-gradient(ellipse 120% 80% at 50% -30%, hsl(172 66% 38% / 0.06), transparent 50%),
+      radial-gradient(ellipse 80% 50% at 100% 50%, hsl(224 60% 55% / 0.04), transparent 40%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    @apply tracking-tight;
   }
 
   html {
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  ::selection {
+    background: hsl(var(--accent) / 0.25);
+    color: hsl(var(--foreground));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
@@ -128,6 +174,18 @@
 
   .bg-card-gradient {
     background: var(--gradient-card);
+  }
+
+  .bg-accent-gradient {
+    background: var(--gradient-accent);
+  }
+
+  .bg-section-alt {
+    background: var(--gradient-section);
+  }
+
+  .bg-section-footer {
+    background-color: hsl(var(--section-footer));
   }
 
   .shadow-glow {
@@ -152,8 +210,34 @@
 
   .grid-bg {
     background-image:
-      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
-    background-size: 50px 50px;
+      linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.5) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .section-divider {
+    @apply relative;
+  }
+
+  .section-divider::before {
+    content: "";
+    @apply absolute inset-x-0 top-0 h-px;
+    background: linear-gradient(90deg, transparent, hsl(var(--border)), transparent);
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 md:py-24 lg:py-28;
+  }
+
+  .glass-card {
+    @apply bg-card/90 backdrop-blur-md border border-border/80 shadow-card;
+  }
+
+  .card-interactive {
+    @apply transition-smooth hover:border-accent/35 hover:shadow-elegant hover:-translate-y-1 active:translate-y-0;
+  }
+
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
   }
 }
