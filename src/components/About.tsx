@@ -1,18 +1,54 @@
-import { GraduationCap, Award, Code, Heart, Target, Users, Zap } from "lucide-react";
+import {
+  GraduationCap,
+  Award,
+  Code,
+  Heart,
+  Target,
+  Users,
+  Zap,
+} from "lucide-react";
 import Reveal from "@/components/Reveal";
 import SectionHeader from "@/components/SectionHeader";
 
 const stats = [
-  { icon: Code, label: "Projects Shipped", value: "6+ Production" },
-  { icon: Award, label: "Certifications", value: "Pega CSA/SSA • Java Full Stack" },
-  { icon: GraduationCap, label: "Education", value: "B.E. ECE — 7.8 CGPA" },
+  {
+    icon: Code,
+    label: "Technical Background",
+    value: "Full Stack Development & Networking",
+  },
+  {
+    icon: Award,
+    label: "Certifications",
+    value: "Pega CSA/SSA • Java Full Stack",
+  },
+  {
+    icon: GraduationCap,
+    label: "Education",
+    value: "B.E. Electronics & Communication",
+  },
 ];
 
 const values = [
-  { icon: Heart, title: "User-First Design", text: "Every feature starts with the end user in mind." },
-  { icon: Target, title: "Clean Architecture", text: "Maintainable code that scales with your product." },
-  { icon: Users, title: "Agile Collaboration", text: "Transparent sprints, demos, and feedback loops." },
-  { icon: Zap, title: "End-to-End Ownership", text: "From database to UI — one developer, full accountability." },
+  {
+    icon: Code,
+    title: "Full Stack Development",
+    text: "Building web applications using React.js, Next.js, Java, Spring Boot, and REST APIs.",
+  },
+  {
+    icon: Target,
+    title: "Networking & IT Support",
+    text: "Hands-on experience with network installations, routers, switches, rack setup, and access control.",
+  },
+  {
+    icon: Users,
+    title: "Team Collaboration",
+    text: "Working with team members to understand requirements, troubleshoot issues, and complete tasks.",
+  },
+  {
+    icon: Zap,
+    title: "Continuous Learning",
+    text: "Strengthening technical skills and exploring new tools, technologies, and industry practices.",
+  },
 ];
 
 const About = () => {
@@ -24,10 +60,11 @@ const About = () => {
             label="About Me"
             title={
               <>
-                Building the web, <span className="text-gradient">one feature at a time</span>
+                A developer with a{" "}
+                <span className="text-gradient">problem-solving mindset</span>
               </>
             }
-            description="Full-stack developer who bridges enterprise Java backends and modern React frontends — delivering products that are fast, reliable, and built to last."
+            description="A technology professional with a background in Full Stack Development and hands-on experience in Network Engineering, focused on solving technical problems and growing through real-world projects."
           />
         </Reveal>
 
@@ -35,24 +72,40 @@ const About = () => {
           <Reveal delay={100}>
             <div className="space-y-5 text-muted-foreground leading-relaxed text-base md:text-[1.05rem]">
               <p>
-                I'm <span className="text-foreground font-medium">Sanjai Saravanan</span>, a Full Stack Developer based in
-                Karur, Tamil Nadu, currently working from Bengaluru. I help startups, agencies, and businesses ship
-                web applications that perform under real-world load.
+                I'm{" "}
+                <span className="text-foreground font-medium">
+                  Sanjai Saravanan
+                </span>
+                , an engineering graduate with a technical background in Full
+                Stack Development and Network Engineering. I am currently
+                working as a Network Engineer at C Drive in Coimbatore.
               </p>
+
               <p>
-                I specialize in turning ideas into scalable web applications — combining the reliability of{" "}
-                <span className="text-foreground font-medium">Java Spring Boot and Node.js</span> on the backend
-                with the modern speed of{" "}
-                <span className="text-foreground font-medium">React.js</span> and{" "}
-                <span className="text-foreground font-medium">Next.js</span> on the frontend.
+                My full-stack development skills include{" "}
+                <span className="text-foreground font-medium">
+                  React.js, Next.js, Java, Spring Boot, REST APIs, and SQL
+                </span>
+                . I have worked on web application development, including
+                building an e-commerce application from scratch.
               </p>
+
               <p>
-                My background spans headless e-commerce, learning platforms, inventory systems, and enterprise Pega
-                applications — giving me a unique blend of startup agility and enterprise-grade discipline.
+                In my current networking role, I gain hands-on experience with
+                network infrastructure activities, including{" "}
+                <span className="text-foreground font-medium">
+                  router and switch installation, rack setup, access control,
+                  and security-related systems
+                </span>
+                .
               </p>
+
               <p>
-                Whether you need a headless e-commerce platform, a custom SPA, LMS, or REST API integration,
-                I bring clean architecture, agile delivery, and a tester's eye for quality to every project.
+                I enjoy learning new technologies, troubleshooting technical
+                challenges, and applying my knowledge to practical problems.
+                I am looking for opportunities to contribute my skills, take
+                on new responsibilities, and continue growing as a technology
+                professional.
               </p>
             </div>
           </Reveal>
@@ -64,10 +117,14 @@ const About = () => {
                   <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-smooth">
                     <Icon className="w-6 h-6 text-accent" />
                   </div>
+
                   <div className="text-[11px] text-muted-foreground uppercase tracking-wider mb-1.5 font-mono">
                     {label}
                   </div>
-                  <div className="font-semibold text-foreground leading-snug">{value}</div>
+
+                  <div className="font-semibold text-foreground leading-snug">
+                    {value}
+                  </div>
                 </div>
               </Reveal>
             ))}
@@ -85,8 +142,12 @@ const About = () => {
                 <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-3 mx-auto sm:mx-0 group-hover:bg-accent/20 transition-smooth">
                   <Icon className="w-5 h-5 text-accent" />
                 </div>
+
                 <h3 className="font-semibold text-sm mb-1">{title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{text}</p>
+
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {text}
+                </p>
               </div>
             ))}
           </div>

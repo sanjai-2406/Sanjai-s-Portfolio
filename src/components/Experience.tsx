@@ -3,18 +3,35 @@ import Reveal from "@/components/Reveal";
 import SectionHeader from "@/components/SectionHeader";
 
 const timeline = [
+
+   {
+    type: "work",
+    icon: Briefcase,
+    title: "Network Engineer",
+    org: "C-Drive Solutions, Coimbatore",
+    period: "Aug 2026 – Nov 2026",
+    points: [
+      "My journey as a Network Engineer has given me valuable hands-on experience in network infrastructure deployment, system installation, configuration, and troubleshooting.",
+      " At C-Drive Solutions, I have worked on an infrastructure project at Avera Heart Hospital, Coimbatore, where I contributed to setting up and maintaining essential networking and integrated hospital systems",
+      "My responsibilities include network rack setup, installing and configuring routers and switches, access control systems, IP camera configuration, safety systems, and nurse calling systems.",
+      "I have also gained practical experience troubleshooting hardware and software issues, diagnosing connectivity problems, and ensuring that connected systems function reliably.",
+      
+    ],
+  },
   {
     type: "work",
     icon: Briefcase,
     title: "Full Stack Developer",
-    org: "Current Role",
-    period: "May 2025 – Present",
+    org: "Buynoe Technologies, Banglore",
+    period: "Dec 2025 – july 2026",
     points: [
-      "Developing full-stack features using React.js and Java Spring Boot",
-      "Designing and consuming REST APIs to connect frontend & backend",
-      "Participating in Agile sprints, daily standups, and peer code reviews",
-      "Managing source code with Git and collaborating on pull requests",
+      "My journey as a Full Stack Developer has been driven by my passion for building modern web applications and solving real-world problems through technology.Developing full-stack features using React.js and Node.js",
+      "With hands-on experience at Buynoe Technologies, I have worked on developing full-stack applications across e-commerce and Learning management domains, gaining practical experience in frontend development, backend engineering, database management, and application deployment.",
+      "On the frontend, I work with React.js, Next.js, JavaScript, HTML5, and CSS3 to build responsive and interactive user interfaces.",
+      "On the backend, I develop RESTful APIs using Node.js with MySQL and MongoDB for data management. I have also implemented JWT authentication and role-based access control to improve application security.",
+      "During my professional journey, I contributed to an e-commerce platform featuring product catalogs, shopping carts, checkout, and order management. I also worked on an HR Management System designed to support employee onboarding, payroll, attendance, and offboarding.",
       "Contributing to manual testing cycles and defect tracking",
+      "I have experience working with Git, GitHub, CI/CD workflows, Docker, and Agile development practices. I enjoy learning new technologies, improving application performance, and building scalable solutions that deliver practical value."
     ],
   },
   {
@@ -32,9 +49,18 @@ const timeline = [
     type: "cert",
     icon: BadgeCheck,
     title: "Java Full Stack Development",
-    org: "Qspiders",
+    org: "Qspiders, Vadapalani",
     period: "Mar – Nov 2025",
-    points: ["HTML, CSS, JS, React, Java, SQL, Hibernate, Spring Boot, Manual Testing"],
+    points: [
+      "My Java Full Stack Development training at QSpiders provided me with a strong foundation in modern web application development, covering both frontend and backend technologies.",
+      "Throughout the course, I developed my technical skills in building interactive user interfaces, implementing server-side business logic, managing databases, and integrating applications through RESTful APIs.",
+      "The training covered core Java programming, object-oriented programming (OOP), SQL, HTML5, CSS3, JavaScript, React.js, Hibernate, and Spring Boot. ",
+      "I gained knowledge of frontend development, backend architecture, database connectivity, and the fundamentals of building end-to-end web applications.",
+      "Through practical learning and coding exercises, I strengthened my understanding of application development, database operations, API integration, and debugging. ",
+      "This training helped me build a foundation for developing full-stack applications and prepared me to apply these technologies in real-world software development projects.",
+
+    ],
+    
   },
   {
     type: "cert",

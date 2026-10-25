@@ -1,248 +1,432 @@
 import { useState } from "react";
-import { ExternalLink, Code2, ShoppingCart, Brain, Package, BookOpen, GraduationCap } from "lucide-react";
+import {
+  ExternalLink,
+  Code2,
+  ShoppingCart,
+  Brain,
+  BookOpen,
+  GraduationCap,
+  Network,
+} from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import Reveal from "@/components/Reveal";
 import SectionHeader from "@/components/SectionHeader";
 import { cn } from "@/lib/utils";
+
 import headlessPreview from "@/assets/project-headless-ecommerce.svg";
 import quizPreview from "@/assets/project-quiz-application.svg";
-import inventoryPreview from "@/assets/project-inventory-management.svg";
 import libraryPreview from "@/assets/project-digital-library.svg";
 import lmsPreview from "@/assets/project-learning-management-system.svg";
 
-const categories = ["All", "Full Stack", "E-Commerce", "Education", "Enterprise"] as const;
+const categories = [
+  "All",
+  "Full Stack",
+  "E-Commerce",
+  "Education",
+  "Enterprise",
+  "Networking",
+] as const;
 
 type Category = (typeof categories)[number];
 
 const projects = [
   {
     icon: ShoppingCart,
-    title: "Headless E-Commerce Platform",
+    title: "Full Stack E-Commerce Platform",
     category: "E-Commerce" as Category,
     featured: true,
     period: "Jan 2026 – Apr 2026",
+
     description:
-      "Architected a production-grade headless e-commerce platform using Medusa.js as the backend engine and Next.js as the storefront — enabling independent scaling and SEO-optimized page loads.",
+      "Designed and developed a full-stack e-commerce application from scratch. Built the frontend, backend functionality, and database integration to support product browsing, shopping cart management, order processing, and a smooth online shopping experience.",
+
     image: headlessPreview,
-    result: "Delivered a 22% lift in checkout conversion and supported 14k monthly shoppers.",
-    previewLabel: "Order dashboard & performance snapshot",
+
+    result:
+      "Implemented core e-commerce functionality, including product management, cart operations, order processing, and frontend-backend communication.",
+
+    previewLabel: "Custom-built e-commerce application",
+
     highlights: [
-      "Product catalog & cart management",
-      "Secure order placement with real-time inventory sync",
-      "Fully responsive component-based React UI",
-      "Real-time API integration between Medusa & Next.js",
+      "Developed the application from scratch",
+      "Built responsive user interfaces using React.js and Next.js",
+      "Implemented backend functionality and REST API integration",
+      "Developed product catalog and shopping cart functionality",
+      "Integrated database operations and order management",
+      "Worked on checkout and payment-related functionality",
     ],
-    tags: ["Medusa.js", "Next.js", "React.js", "Node.js", "REST APIs"],
+
+    tags: [
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "REST APIs",
+      "Database Integration",
+      "Full Stack Development",
+    ],
   },
+
   {
     icon: Brain,
     title: "Interactive Quiz Application",
     category: "Education" as Category,
     featured: false,
     period: "Sep 2025 – Dec 2025",
+
     description:
-      "Built a fully interactive SPA quiz app in React.js with dynamic question rendering, timer-based challenges, and instant result feedback for an engaging user experience.",
+      "Developed an interactive quiz application using React.js, featuring dynamically rendered questions, timed challenges, score calculation, and immediate feedback to create an engaging learning experience.",
+
     image: quizPreview,
-    result: "Engaged over 10k learners with a 95% completion rate for timed quizzes.",
-    previewLabel: "Quiz flow & live scoring preview",
+
+    result:
+      "Implemented interactive quizzes, countdown timers, score calculation, and result summaries.",
+
+    previewLabel: "Quiz interface and results preview",
+
     highlights: [
-      "Dynamic question rendering with React Hooks",
-      "Countdown timer & live score calculation",
-      "Result analysis with answer breakdown",
-      "Smooth transitions and responsive design",
+      "Implemented dynamic question rendering using React Hooks",
+      "Developed countdown timers and score calculation",
+      "Created result summaries with answer breakdowns",
+      "Built responsive layouts and interactive components",
     ],
-    tags: ["React.js", "Hooks", "CSS3", "JavaScript", "Spring Boot", "JDBC"],
+
+    tags: [
+      "React.js",
+      "JavaScript",
+      "CSS3",
+      "Spring Boot",
+      "JDBC",
+    ],
   },
+
   {
     icon: GraduationCap,
     title: "Learning Management System",
-    category: "Education" as Category,
+    category: "Full Stack" as Category,
     featured: true,
     period: "Nov 2025 – Feb 2026",
+
     description:
-      "Designed and built a full-stack LMS for managing courses, enrollments, and learner progress — with separate dashboards for admins, instructors, and students, backed by a Spring Boot REST API and a React.js frontend.",
+      "Developed a full-stack learning management application for course delivery, student enrollment, and learning progress tracking using React.js, Spring Boot, and MySQL.",
+
     image: lmsPreview,
-    result: "Streamlined course delivery for 500+ enrolled learners with 85% module completion rate.",
-    previewLabel: "Course catalog & learner progress dashboard",
+
+    result:
+      "Implemented course management, student enrollment, progress tracking, and role-based access functionality.",
+
+    previewLabel: "Course management and learning dashboard",
+
     highlights: [
-      "Role-based access for admins, instructors, and students",
-      "Course modules with lessons, assignments, and progress tracking",
-      "Student enrollment, batch management, and certificate workflows",
-      "Spring Boot REST APIs with MySQL and a responsive React UI",
+      "Implemented role-based access for administrators, instructors, and students",
+      "Developed course, lesson, and assignment management",
+      "Implemented enrollment and learning progress tracking",
+      "Integrated Spring Boot REST APIs with MySQL",
     ],
-    tags: ["Java", "Spring Boot", "React.js", "MySQL", "REST APIs"],
+
+    tags: [
+      "Java",
+      "Spring Boot",
+      "React.js",
+      "MySQL",
+      "REST APIs",
+    ],
   },
+
   {
-    icon: Package,
-    title: "Inventory Management System",
-    category: "Full Stack" as Category,
-    featured: false,
-    period: "Mar 2025 – Jul 2025",
+    icon: Network,
+    title: "Hospital Network & Infrastructure Setup",
+    category: "Networking" as Category,
+    featured: true,
+    period: "2026",
+
     description:
-      "Developed a full-stack inventory management platform to track stock levels, manage suppliers, and automate low-stock alerts — built with a React.js + Next.js frontend and a Node.js REST API backend.",
-    image: inventoryPreview,
-    result: "Cut inventory reconciliation time by 40% and reduced stockouts by 18%.",
-    previewLabel: "Stock dashboard & alerts overview",
+      "Worked as a Network Engineer under C-Drive Solutions on infrastructure deployment at Avera Heart Hospital, Coimbatore. Responsibilities included network rack setup, network device installation, access control systems, IP cameras, nurse calling systems, and technical troubleshooting.",
+
+    image: libraryPreview,
+
+    result:
+      "Contributed to hospital infrastructure deployment through network installation, system configuration, and hardware and software troubleshooting.",
+
+    previewLabel: "Network infrastructure and integrated systems",
+
     highlights: [
-      "Real-time stock tracking with CRUD operations",
-      "Server-side rendering with Next.js for fast loads",
-      "Node.js + Express REST APIs with role-based access",
-      "Dashboard with low-stock alerts & sales analytics",
+      "Performed network rack setup and structured cabling",
+      "Installed network devices, including switches and routers",
+      "Assisted with access control installation and configuration",
+      "Installed IP cameras and troubleshot connectivity issues",
+      "Worked on nurse calling system installation and troubleshooting",
+      "Resolved hardware and software issues during deployment",
     ],
-    tags: ["React.js", "Next.js", "Node.js", "Express", "REST APIs"],
+
+    tags: [
+      "Networking",
+      "Routers & Switches",
+      "Rack Setup",
+      "Access Control",
+      "IP Cameras",
+      "Troubleshooting",
+    ],
   },
+
   {
     icon: BookOpen,
-    title: "Digital Library Management (Pega)",
+    title: "Digital Library Management",
     category: "Enterprise" as Category,
     featured: false,
     period: "Aug 2023 – Nov 2023",
+
     description:
-      "Built an enterprise-grade Digital Library application on the Pega Platform to digitize book catalog, member onboarding, issue/return workflows, and fine calculation using case management and business rules.",
+      "Developed a digital library application using the Pega Platform to manage book catalogs, member registration, issue and return workflows, and fine calculations using business rules and case management.",
+
     image: libraryPreview,
-    result: "Enabled librarians to process 3x more book transactions with 99% rule accuracy.",
-    previewLabel: "Member dashboard with issue/return workflow",
+
+    result:
+      "Implemented structured library workflows and role-based access for different user types.",
+
+    previewLabel: "Digital library management preview",
+
     highlights: [
-      "Case lifecycle for book issue, return & renewal",
-      "Decision tables & declarative rules for fine logic",
-      "Role-based access for librarians, members & admins",
-      "Custom UI sections, data pages & report definitions",
+      "Implemented book issue, return, and renewal workflows",
+      "Configured business rules for fine calculation",
+      "Implemented role-based access for members and administrators",
+      "Worked with data pages and report definitions",
     ],
-    tags: ["Pega Platform", "BPM", "Case Management", "Decision Rules", "CSA/SSA"],
+
+    tags: [
+      "Pega Platform",
+      "BPM",
+      "Case Management",
+      "CSA",
+      "SSA",
+    ],
   },
 ];
 
 const Projects = () => {
-  const [activeCategory, setActiveCategory] = useState<Category>("All");
+  const [activeCategory, setActiveCategory] =
+    useState<Category>("All");
 
-  const filtered =
+  const filteredProjects =
     activeCategory === "All"
       ? projects
-      : projects.filter((p) => p.category === activeCategory);
+      : projects.filter(
+          (project) => project.category === activeCategory
+        );
 
   return (
-    <section id="projects" className="section-padding relative bg-section-alt section-divider">
+    <section
+      id="projects"
+      className="section-padding relative section-divider bg-section-alt"
+    >
       <div className="container">
+        {/* Section heading */}
         <Reveal>
           <SectionHeader
-            label="Portfolio"
+            label="Technical Experience"
+            align="center"
             title={
               <>
-                Featured <span className="text-gradient">Projects</span>
+                My Technical{" "}
+                <span className="text-gradient">Experience</span>
               </>
             }
-            description="Production-grade applications I've built — from headless e-commerce and LMS platforms to enterprise case management systems."
+            description="Explore my experience in full-stack development, enterprise applications, and IT networking. Each section highlights my technical skills, responsibilities, and practical experience."
           />
         </Reveal>
 
+        {/* Category filters */}
         <Reveal delay={80}>
-          <div className="flex flex-wrap justify-center gap-2 mb-8 md:mb-10">
-            {categories.map((cat) => (
+          <div className="mb-8 mt-8 flex flex-wrap justify-center gap-2 md:mb-10">
+            {categories.map((category) => (
               <button
-                key={cat}
+                key={category}
                 type="button"
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => setActiveCategory(category)}
+                aria-pressed={activeCategory === category}
                 className={cn(
-                  "px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-smooth border",
-                  activeCategory === cat
-                    ? "bg-accent text-accent-foreground border-accent shadow-sm"
-                    : "bg-background/60 text-muted-foreground border-border hover:border-accent/40 hover:text-foreground",
+                  "rounded-full border px-4 py-2 text-sm font-medium transition-all duration-200",
+                  activeCategory === category
+                    ? "border-accent bg-accent text-accent-foreground shadow-sm"
+                    : "border-border bg-background/60 text-muted-foreground hover:border-accent/50 hover:text-foreground"
                 )}
               >
-                {cat}
+                {category}
               </button>
             ))}
           </div>
         </Reveal>
 
-        <div className="grid gap-5 sm:gap-6 lg:grid-cols-2">
-          {filtered.map(({ icon: Icon, title, category, featured, period, description, image, result, previewLabel, highlights, tags }, i) => (
-            <Reveal key={title} delay={i * 80}>
-              <article className="h-full glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-7 md:p-8 card-interactive group flex flex-col">
-                <div className="flex items-start justify-between gap-3 mb-5 sm:mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:scale-110 group-hover:bg-accent/20 transition-smooth shrink-0">
-                      <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
+        {/* Experience cards */}
+        <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 xl:gap-8">
+          {filteredProjects.map(
+            (
+              {
+                icon: Icon,
+                title,
+                category,
+                featured,
+                period,
+                description,
+                image,
+                result,
+                previewLabel,
+                highlights,
+                tags,
+              },
+              index
+            ) => (
+              <Reveal key={title} delay={index * 70}>
+                <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg sm:p-6 md:p-7">
+                  {/* Card heading */}
+                  <div className="mb-5 flex items-start gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-accent/20 bg-accent/10 text-accent transition-transform duration-300 group-hover:scale-105">
+                      <Icon className="h-6 w-6" />
                     </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {featured && (
-                        <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-accent/15 text-accent border border-accent/25">
-                          Featured
+
+                    <div className="min-w-0 flex-1">
+                      <div className="mb-2 flex flex-wrap items-center gap-2">
+                        {featured && (
+                          <span className="rounded-full border border-accent/25 bg-accent/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-accent">
+                            Featured
+                          </span>
+                        )}
+
+                        <span className="rounded-full bg-secondary px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
+                          {category}
                         </span>
-                      )}
-                      <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-secondary text-muted-foreground">
-                        {category}
+                      </div>
+
+                      <h3 className="text-lg font-bold leading-snug sm:text-xl">
+                        {title}
+                      </h3>
+
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        {period}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Preview image */}
+                  <div className="mb-5 overflow-hidden rounded-xl border border-border bg-background">
+                    <div className="flex items-center gap-2 border-b border-border bg-muted/50 px-4 py-2.5">
+                      <span className="h-2 w-2 rounded-full bg-red-400" />
+                      <span className="h-2 w-2 rounded-full bg-amber-400" />
+                      <span className="h-2 w-2 rounded-full bg-emerald-400" />
+
+                      <span className="ml-2 text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
+                        {previewLabel}
                       </span>
                     </div>
-                  </div>
-                  <span className="text-[10px] sm:text-xs font-mono text-muted-foreground bg-secondary px-2.5 sm:px-3 py-1 rounded-full text-right leading-snug shrink-0">
-                    {period}
-                  </span>
-                </div>
 
-                <div className="mb-5 sm:mb-6 rounded-xl sm:rounded-2xl border border-border bg-background/80 overflow-hidden shadow-card group-hover:shadow-elegant transition-smooth">
-                  <div className="flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 bg-muted/50 border-b border-border">
-                    <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-red-400" />
-                    <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-amber-400" />
-                    <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-emerald-400" />
-                    <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.25em] text-muted-foreground ml-1">Live preview</span>
+                    <div className="p-3">
+                      <img
+                        src={image}
+                        alt={`${title} preview`}
+                        className="h-40 w-full rounded-lg border border-border object-cover object-center transition-transform duration-500 group-hover:scale-[1.02] sm:h-48"
+                        loading="lazy"
+                      />
+                    </div>
                   </div>
-                  <div className="p-3 sm:p-4">
-                    <img
-                      src={image}
-                      alt={`${title} screenshot`}
-                      className="h-36 sm:h-40 md:h-44 w-full rounded-lg sm:rounded-xl border border-border object-cover object-top group-hover:scale-[1.02] transition-smooth duration-500"
-                      loading="lazy"
-                    />
-                    <p className="mt-2 sm:mt-3 text-[10px] sm:text-[11px] uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium text-muted-foreground line-clamp-2">
-                      {previewLabel}
+
+                  {/* Overview */}
+                  <div className="mb-5">
+                    <h4 className="mb-2 text-sm font-semibold">
+                      Overview
+                    </h4>
+
+                    <p className="text-sm leading-7 text-muted-foreground">
+                      {description}
                     </p>
+
+                    <div className="mt-4 rounded-lg border border-border/70 bg-secondary/30 p-3">
+                      <p className="text-sm leading-6 text-foreground/80">
+                        {result}
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 leading-snug">{title}</h3>
-                <p className="text-muted-foreground mb-2 sm:mb-3 leading-relaxed text-sm md:text-base">{description}</p>
-                <p className="text-xs sm:text-sm font-semibold text-accent mb-4 sm:mb-6">{result}</p>
+                  {/* Key responsibilities */}
+                  <div className="mb-5">
+                    <h4 className="mb-3 text-sm font-semibold">
+                      Key Responsibilities & Highlights
+                    </h4>
 
-                <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6 flex-1">
-                  {highlights.map((h) => (
-                    <li key={h} className="flex items-start gap-2 text-xs sm:text-sm">
-                      <span className="text-accent mt-0.5 shrink-0">▸</span>
-                      <span className="text-muted-foreground">{h}</span>
-                    </li>
-                  ))}
-                </ul>
+                    <ul className="space-y-2.5">
+                      {highlights.map((highlight) => (
+                        <li
+                          key={highlight}
+                          className="flex items-start gap-3 text-sm leading-6 text-muted-foreground"
+                        >
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
 
-                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
-                  {tags.map((t) => (
-                    <span
-                      key={t}
-                      className="text-[10px] sm:text-xs font-mono px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md bg-accent/5 text-accent border border-accent/15"
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Technologies and skills */}
+                  <div className="mb-6 mt-auto border-t border-border pt-4">
+                    <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      Technologies & Skills
+                    </h4>
+
+                    <div className="flex flex-wrap gap-2">
+                      {tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-md border border-accent/15 bg-accent/5 px-2.5 py-1.5 text-xs font-medium text-accent"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Action buttons */}
+                  <div className="flex flex-col gap-3 border-t border-border pt-4 sm:flex-row">
+                    <Button
+                      variant="outline"
+                      className="h-10 flex-1 rounded-xl"
+                      asChild
                     >
-                      {t}
-                    </span>
-                  ))}
-                </div>
+                      <a href="#contact">
+                        Contact Me
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
 
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-auto">
-                  <Button variant="outline" size="sm" className="flex-1 hover:border-accent/50 rounded-xl h-10 sm:h-9" asChild>
-                    <a href="#contact">
-                      <ExternalLink className="w-4 h-4 mr-1" /> Case Study
-                    </a>
-                  </Button>
-                  <Button variant="ghost" size="sm" className="hover:text-accent rounded-xl h-10 sm:h-9 sm:w-10 sm:px-0" asChild>
-                    <a href="https://github.com/sanjaivsbec" target="_blank" rel="noreferrer" aria-label="View on GitHub">
-                      <Code2 className="w-4 h-4" />
-                    </a>
-                  </Button>
-                </div>
-              </article>
-            </Reveal>
-          ))}
+                    <Button
+                      variant="ghost"
+                      className="h-10 rounded-xl hover:text-accent sm:w-11 sm:px-0"
+                      asChild
+                    >
+                      <a
+                        href="https://github.com/sanjai-2406"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit GitHub profile for ${title}`}
+                      >
+                        <Code2 className="h-4 w-4" />
+
+                        <span className="ml-2 sm:hidden">
+                          GitHub Profile
+                        </span>
+                      </a>
+                    </Button>
+                  </div>
+                </article>
+              </Reveal>
+            )
+          )}
         </div>
 
-        {filtered.length === 0 && (
-          <p className="text-center text-muted-foreground py-12">No projects in this category yet.</p>
+        {/* Empty state */}
+        {filteredProjects.length === 0 && (
+          <p className="py-12 text-center text-muted-foreground">
+            No items are available in this category.
+          </p>
         )}
       </div>
     </section>

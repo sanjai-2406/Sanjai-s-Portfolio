@@ -1,50 +1,81 @@
+import {
+  Code,
+  Database,
+  Server,
+  Network,
+  ShieldCheck,
+  BookOpen,
+} from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { Palette, Code, ShoppingCart, Plug, RefreshCw, Smartphone } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import SectionHeader from "@/components/SectionHeader";
 
-const services = [
-  {
-    icon: Palette,
-    title: "Website Design",
-    description:
-      "Clean, modern, and responsive UI/UX designs tailored to your brand and built to convert visitors into customers.",
-    features: ["Mobile-first layouts", "Brand-aligned UI", "Conversion-focused UX"],
-  },
+const expertise = [
   {
     icon: Code,
-    title: "Website Development",
+    title: "Frontend Development",
     description:
-      "Fast, scalable websites built with React, TypeScript, and modern tooling for great performance and SEO.",
-    features: ["React & Next.js apps", "Performance optimization", "SEO-ready structure"],
+      "Building responsive and user-friendly web interfaces with modern JavaScript frameworks and reusable components.",
+    features: [
+      "React.js & Next.js",
+      "JavaScript & TypeScript",
+      "HTML5, CSS3 & Tailwind CSS",
+    ],
   },
   {
-    icon: ShoppingCart,
-    title: "E-Commerce Development",
+    icon: Server,
+    title: "Backend Development",
     description:
-      "Custom e-commerce and headless storefronts with secure checkout, product management, and smooth UX.",
-    features: ["Headless commerce", "Payment integration", "Inventory sync"],
+      "Developing server-side functionality and REST APIs to support web applications and business requirements.",
+    features: [
+      "Java & Spring Boot",
+      "REST API development",
+      "Authentication & authorization",
+    ],
   },
   {
-    icon: Plug,
-    title: "API Development & Integration",
+    icon: Database,
+    title: "Database Management",
     description:
-      "Robust REST APIs and seamless third-party integrations to connect your tools, data, and services.",
-    features: ["Spring Boot APIs", "Third-party integrations", "Documentation & Postman"],
+      "Working with relational databases to organize application data and support reliable data access.",
+    features: [
+      "MySQL & Oracle SQL",
+      "SQL queries and joins",
+      "Database integration",
+    ],
   },
   {
-    icon: Smartphone,
-    title: "Custom Web Applications",
+    icon: Network,
+    title: "Networking & Infrastructure",
     description:
-      "Full-stack SPAs and dashboards — LMS platforms, admin panels, quiz apps, and internal business tools.",
-    features: ["Role-based access", "Real-time dashboards", "Database design"],
+      "Hands-on experience supporting network infrastructure installations and connectivity-related activities.",
+    features: [
+      "Router & switch installation",
+      "Network rack setup",
+      "LAN/WAN fundamentals",
+    ],
   },
   {
-    icon: RefreshCw,
-    title: "Website Redesign",
+    icon: ShieldCheck,
+    title: "IT Infrastructure & Security",
     description:
-      "Transform outdated sites into modern, mobile-first experiences that boost engagement and load speed.",
-    features: ["Legacy migration", "UI modernization", "Performance audit"],
+      "Exposure to on-site IT infrastructure projects involving access control and security-related systems.",
+    features: [
+      "Access control installation",
+      "Network connectivity troubleshooting",
+      "IT infrastructure support",
+    ],
+  },
+  {
+    icon: BookOpen,
+    title: "Technical Learning & Development",
+    description:
+      "Continuously strengthening technical knowledge through practical projects, troubleshooting, and learning new technologies.",
+    features: [
+      "Full-stack application development",
+      "Git & GitHub",
+      "Technical problem-solving",
+    ],
   },
 ];
 
@@ -54,31 +85,42 @@ const Services = () => {
       <div className="container">
         <Reveal>
           <SectionHeader
-            label="Services"
+            label="Technical Expertise"
             align="center"
             title={
               <>
-                What I <span className="text-gradient">Deliver</span>
+                My Technical{" "}
+                <span className="text-gradient">Strengths</span>
               </>
             }
-            description="End-to-end web solutions — from design and development to API integration, testing, and deployment support."
+            description="A combination of full-stack development skills and hands-on IT infrastructure experience, supported by continuous learning and practical problem-solving."
           />
         </Reveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-          {services.map((s, i) => (
-            <Reveal key={s.title} delay={i * 70}>
+          {expertise.map((item, i) => (
+            <Reveal key={item.title} delay={i * 70}>
               <Card className="group h-full p-5 sm:p-6 glass-card card-interactive rounded-2xl">
                 <div className="w-12 h-12 rounded-xl bg-accent-gradient flex items-center justify-center mb-5 group-hover:scale-110 transition-smooth shadow-sm">
-                  <s.icon className="w-6 h-6 text-primary-foreground" />
+                  <item.icon className="w-6 h-6 text-primary-foreground" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{s.description}</p>
+
+                <h3 className="text-lg font-semibold mb-2">
+                  {item.title}
+                </h3>
+
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  {item.description}
+                </p>
+
                 <ul className="space-y-1.5 pt-3 border-t border-border/80">
-                  {s.features.map((f) => (
-                    <li key={f} className="text-xs text-muted-foreground flex items-center gap-2">
-                      <span className="text-accent">✓</span>
-                      {f}
+                  {item.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="text-xs text-muted-foreground flex items-start gap-2"
+                    >
+                      <span className="text-accent shrink-0">✓</span>
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>

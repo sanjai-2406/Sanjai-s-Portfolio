@@ -1,55 +1,76 @@
-import { Shield, MessageCircle, Clock, Layers, CheckCircle2, Zap } from "lucide-react";
+import {
+  Code2,
+  Network,
+  BookOpen,
+  Lightbulb,
+  Users,
+  Target,
+} from "lucide-react";
 import Reveal from "@/components/Reveal";
 import SectionHeader from "@/components/SectionHeader";
 
 const reasons = [
   {
-    icon: Layers,
-    title: "Full-Stack Expertise",
-    description: "One developer for frontend, backend, APIs, and database — no handoff gaps, faster delivery.",
+    icon: Code2,
+    title: "Full Stack Development",
+    description:
+      "Knowledge of frontend and backend development using React.js, Next.js, Java, Spring Boot, REST APIs, and SQL.",
   },
   {
-    icon: Shield,
-    title: "Production-Grade Quality",
-    description: "Clean architecture, tested code, and security best practices built in from day one.",
+    icon: Network,
+    title: "Hands-On Networking Experience",
+    description:
+      "Practical exposure to network infrastructure projects, including router and switch installation, rack setup, and access control systems.",
   },
   {
-    icon: MessageCircle,
-    title: "Clear Communication",
-    description: "Regular updates, plain-language explanations, and quick responses on WhatsApp or email.",
+    icon: Lightbulb,
+    title: "Problem-Solving Mindset",
+    description:
+      "Interested in understanding technical challenges, troubleshooting issues, and finding practical solutions.",
   },
   {
-    icon: Clock,
-    title: "Reliable Delivery",
-    description: "Agile sprints with defined milestones — you always know what's done and what's next.",
+    icon: Target,
+    title: "Focus on Quality",
+    description:
+      "Emphasis on readable code, organized application structure, reliable functionality, and attention to detail.",
   },
   {
-    icon: CheckCircle2,
-    title: "QA-Driven Mindset",
-    description: "Manual testing background means fewer bugs in production and better user experiences.",
+    icon: Users,
+    title: "Team Collaboration",
+    description:
+      "Ready to collaborate with team members, understand project requirements, share ideas, and contribute to team goals.",
   },
   {
-    icon: Zap,
-    title: "Modern Tech Stack",
-    description: "Java Spring Boot, React, Next.js, and Node.js — battle-tested tools that scale with your business.",
+    icon: BookOpen,
+    title: "Continuous Learning",
+    description:
+      "Committed to strengthening technical skills, learning new technologies, and adapting to evolving project requirements.",
   },
 ];
 
 const WhyWorkWithMe = () => {
   return (
-    <section id="why-me" className="section-padding bg-section-alt relative section-divider">
-      <div className="absolute inset-0 grid-bg opacity-15 pointer-events-none" aria-hidden />
+    <section
+      id="why-me"
+      className="section-padding bg-section-alt relative section-divider"
+    >
+      <div
+        className="absolute inset-0 grid-bg opacity-15 pointer-events-none"
+        aria-hidden="true"
+      />
+
       <div className="container relative">
         <Reveal>
           <SectionHeader
-            label="Why Hire Me"
+            label="Why Consider Me"
             align="center"
             title={
               <>
-                More than just <span className="text-gradient">writing code</span>
+                Skills, experience, and a{" "}
+                <span className="text-gradient">mindset to grow</span>
               </>
             }
-            description="I partner with clients who want a developer who thinks about the product, the user, and the long-term maintainability — not just the next feature."
+            description="I bring a combination of full-stack development knowledge, hands-on IT infrastructure experience, and a commitment to continuous learning and professional growth."
           />
         </Reveal>
 
@@ -60,25 +81,36 @@ const WhyWorkWithMe = () => {
                 <div className="w-11 h-11 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-smooth">
                   <Icon className="w-5 h-5 text-accent" />
                 </div>
+
                 <h3 className="font-semibold mb-2">{title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {description}
+                </p>
               </div>
             </Reveal>
           ))}
         </div>
 
         <Reveal delay={200}>
-          <blockquote className="max-w-3xl mx-auto text-center glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-accent/20">
-            <p className="text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed italic mb-4">
-              "Sanjai delivered our inventory platform ahead of schedule with clean APIs and a polished React dashboard.
-              His attention to detail and proactive communication made the entire process smooth."
+          <div className="max-w-3xl mx-auto text-center glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-accent/20">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-3">
+              Ready for the Next Opportunity?
+            </h3>
+
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
+              I am looking for opportunities where I can apply my technical
+              knowledge, contribute to meaningful projects, collaborate with
+              experienced professionals, and continue developing my skills.
             </p>
-            <footer className="text-sm text-muted-foreground">
-              <span className="font-semibold text-foreground">Project Client</span>
-              <span className="mx-2 text-border">·</span>
-              Inventory Management System
-            </footer>
-          </blockquote>
+
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center rounded-xl px-6 py-3 bg-accent text-accent-foreground font-medium hover:opacity-90 transition-smooth"
+            >
+              Let's Connect
+            </a>
+          </div>
         </Reveal>
       </div>
     </section>

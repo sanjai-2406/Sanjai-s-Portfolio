@@ -8,14 +8,12 @@ const Footer = () => {
         { label: "About", href: "/#about" },
         { label: "Projects", href: "/#projects" },
         { label: "Contact", href: "/#contact" },
-        { label: "Blog", href: "/blog" },
       ],
     },
     {
       title: "Resources",
       links: [
         { label: "Process", href: "/#process" },
-        { label: "FAQ", href: "/faq" },
         { label: "Skills", href: "/#skills" },
         { label: "Services", href: "/#services" },
       ],
@@ -43,14 +41,14 @@ const Footer = () => {
               />
             </a>
             <p className="max-w-sm text-sm text-muted-foreground leading-relaxed">
-              Full Stack Developer crafting scalable web applications with Java, React, and Next.js.
-              Available for freelance projects and contract work.
+             Full Stack Developer skilled in Java, Spring Boot, React.js, and Next.js, passionate about building scalable web applications.
+
             </p>
             <a
               href="/#contact"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:gap-2.5 transition-all"
             >
-              Start a project <ArrowUpRight className="w-4 h-4" />
+              Contact <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
 

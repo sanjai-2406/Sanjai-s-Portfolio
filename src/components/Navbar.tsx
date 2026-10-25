@@ -14,8 +14,7 @@ const primaryLinks = [
 
 const secondaryLinks = [
   { label: "Services", href: "/#services", section: "services" },
-  { label: "Blog", href: "/blog", section: "blog" },
-  { label: "FAQ", href: "/faq", section: "faq" },
+
 ];
 
 const allLinks = [...primaryLinks, ...secondaryLinks];
@@ -120,7 +119,7 @@ const Navbar = () => {
 
         <div className="hidden lg:block shrink-0">
           <Button variant="hero" size="sm" className="rounded-xl px-5" asChild>
-            <a href="/#contact">Hire Me</a>
+            <a href="/#contact">Contact</a>
           </Button>
         </div>
 
